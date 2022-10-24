@@ -1,19 +1,25 @@
+import java.util.Arrays;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Введите размер масссива - ");
-        Scanner per = new Scanner(System.in);
-        int i = per.nextInt();
-        System.out.println(i);
-        System.out.println("Введите" + i + "переменных - ");
-        int[] mas = new int[i];
-        int su = 0;
-        for (int p = 0; p < i; p++) {
-            mas[p] = per.nextInt();
-            su = su + mas[p];
+        Scanner input = new Scanner(System.in);
+
+        String[] numbers = input.nextLine().split(" ");
+
+        int sum = 0;
+
+        int i = 0;
+
+
+        do {
+
+            sum += Integer.parseInt(numbers[i]);
+
+            i++;
+
+        } while (numbers.length != i);
+
+
+        System.out.println("The sum of the numbers: " + sum);
         }
-        float sr = (float) su/i;
-        System.out.println("Сумма чисел в массиве - " + su);
-        System.out.println("Ср.Значение чисел в массиве - " + sr);
     }
-}
